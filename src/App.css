@@ -1,38 +1,192 @@
+body {
+  background: #f9fafb;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #111827;
+}
+
 .App {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #111827;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.Logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.Tagline {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.Button {
+  background: #111827;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 4px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.Button.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.Button:hover {
+  opacity: 0.9;
+}
+
+.Input,
+.Textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0 12px 0;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.Textarea {
+  resize: vertical;
+}
+
+.LoginBox,
+.Dashboard,
+.FormGrid,
+.PreviewScreen {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.Metrics {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.Metric {
+  flex: 1;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 12px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.CardList {
+  margin-top: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.CouponCard {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.SmallBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+.SmallBtn.danger {
+  color: #dc2626;
+}
+
+.FormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.CouponPreview {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  background: #f9fafb;
+}
+
+.Badge {
+  display: inline-block;
+  background: #111827;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin: 4px 0;
+}
+
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.Toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
   color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: slideUp 0.3s ease-out;
+  z-index: 200;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes slideUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translate(-50%, 20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
